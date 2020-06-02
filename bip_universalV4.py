@@ -6,19 +6,14 @@ try:
     import sfm
 except:
     from sfm import sfmUtils
-    pass
-
 import sys,os.path,vs
 from random import *
 
 
 # ==================================================================================================
 def ParentMaintainWorldSafe(child, parent):
-    if (child != None):
-        if (parent != None):
-            sfmUtils.ParentMaintainWorld(child, parent)
-        else:
-            print_("Err in ParentSafe {} - {}".format(child.name,parent.name))
+    if child is not None and parent is not None:
+        sfmUtils.ParentMaintainWorld(child, parent)
     else:
         print_("Err in ParentSafe {} - {}".format(child.name,parent.name))
 
